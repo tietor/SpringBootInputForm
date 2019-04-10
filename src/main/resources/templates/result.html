@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Iseberg Reservation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Iseberg</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Essen</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Reservieren</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Über uns</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<h3>Neu erfasste Reservation:</h3>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Id:</label>
+    <div class="col-sm-10">
+        <input readonly type="text" th:value="${reservation.id}"/>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Angaben:</label>
+    <div class="col-sm-10">
+        <input readonly type="text" th:value="${reservation.content}"/>
+    </div>
+</div>
+<a href="/reservation">
+    <button type="button" class="btn btn-info">Neue Reservation</button>
+</a>
+</body>
+</html>

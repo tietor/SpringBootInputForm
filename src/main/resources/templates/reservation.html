@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Iseberg Reservation erfassen</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Iseberg</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Essen</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Reservieren</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Über uns</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<h3>Neue Reservation erfassen</h3>
+<form action="#" th:action="@{/reservation}" th:object="${reservation}" method="post">
+    <div class="form-group">
+        <label>Id:</label>
+        <input type="text" class="form-control" th:field="*{id}"/>
+    </div>
+    <div class="form-group">
+        <label>Angaben:</label>
+        <input type="text" class="form-control" th:field="*{content}"/>
+    </div>
+    <button type="submit" class="btn btn-success">Bestätigen</button>
+    <a href="index.html">
+        <button type="button" class="btn btn-warning">Abbrechen</button>
+    </a>
+</form>
+</body>
+</html>
